@@ -1,0 +1,123 @@
+* {margin:0;padding:0;
+    text-transform:capitalize;
+    box-sizing:border-box;
+    transition: all .3s linear;
+    font-family:'Exo 2',sans-serif;
+    scroll-behavior:smooth;}
+
+:root{--primary-bg-color:#eee;
+      --secondary-bg-color:#fff;
+      --primary-text-color:#666;
+      --secondary-text-color:#999;
+
+      --box-shadow:0 0 .5rem #090a0a7a;
+      --box-shadow2:0 .5rem 1.5rem #0d2e2e23;
+      --box-shadow3:0 .3rem 4rem #252c2c2f;
+      --box-shadow4:0 0 4px #000;
+      --box-shadow5:5px 5px 5px #eee;}
+
+
+html {font-size:65%}
+
+body {overflow-x:hidden;}
+
+body.active {--primary-bg-color:#222;
+             --secondary-bg-color:#333;
+             --primary-text-color:#fff;
+             --secondary-text-color:#eee;}
+
+
+#theme-toggler.fa-sun {transform:rotate(180deg);}
+
+/************************ 
+  # Start Service
+***********************/
+.container {min-height:90vh;
+            padding:2rem 7%;
+            background:var(--primary-bg-color);}
+
+.container .title {text-align:center;
+                   color:var(--primary-text-color);
+                   font-size:3rem;
+                   text-transform:uppercase;
+                   padding:2rem 0;}
+
+.container .box-container {display:flex;
+                           flex-wrap:wrap;
+                           gap:1.5rem;}
+
+.container .box-container .box {flex:1 1 25rem;
+                                padding:2rem;
+                                background:var(--secondary-bg-color);
+                                text-align:center;
+                                border-radius:0.5rem;
+                                box-shadow:0 5px 10px rgba(0,0,0,.3);
+                                overflow:hidden;
+                                position:relative;
+                                cursor:pointer;
+                                z-index:0;}
+
+.container .box-container .box .number {position:absolute;
+                                        top:.3rem;left:1rem;
+                                        font-size:4rem;
+                                        font-weight:bold;
+                                        color:var(--secondary-bg-color);}
+
+.container .box-container .box #oi {width:6rem;
+                                    height:6rem;
+                                    border-radius:50%;
+                                    margin:1rem 0;
+                                    background:rgba(0,0,0,.1);
+                                    color:var(--primary-text-color);
+                                    padding:1rem;}
+
+.container .box-container .box h3 {font-size:2.5rem;
+                                   color:var(--primary-text-color);}
+
+.container .box-container .box p {font-size:1.5rem;
+                                  color:var(--primary-text-color);}
+
+.container .box-container .box::before {content:'';
+                                        position:absolute;
+                                        top:0;left:0;
+                                        width:100%;
+                                        height:100%;
+                                        transition:.3s linear;
+                                        z-index:-1;
+                                        background:#46c233;
+                                        clip-path:circle(28% at 5% 0);}
+
+.container .box-container .box:hover::before {clip-path:circle(100%);}
+
+.container .box-container .box:hover > * {color:#fff}
+
+.container .box-container .box:hover #oi {color:#fff}
+
+#theme-toggler {position:fixed;
+                top:2rem;
+                right:2rem;
+                font-size:3rem;
+                width:5rem;
+                height:5rem;
+                padding:1rem;
+                padding-left:1.2rem;
+                padding-bottom:1.2rem;
+                background:#666;
+                color:#fff;
+                box-shadow:0 0 5px #333;
+                border-radius:50%;
+                cursor:pointer;}
+
+
+
+@media (max-width:769px){
+
+         html {font-size:54%;}
+
+}
+
+
+
+
+
+
